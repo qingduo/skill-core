@@ -29,3 +29,20 @@ pnpm verify
   under `/tmp/skill-core-repo`.
 - Additional repository-initialization and push commands will be appended below
   as they are executed.
+
+## Additional Commands Executed
+
+```sh
+git init
+git checkout -b main
+git config user.name qingduo
+git config user.email qingduo@users.noreply.github.com
+git add .
+git commit -m "Initial standalone skill-core import"
+```
+
+## Current State
+
+- Local standalone repository initialized
+- Initial commit created on `main`
+- Remote GitHub repository `qingduo/skill-core` has not been created yet
