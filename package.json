@@ -1,0 +1,54 @@
+{
+  "name": "@openclaw/skill-core",
+  "version": "0.1.0",
+  "description": "Decoupled skill-core runtime contracts and minimal tool orchestration",
+  "keywords": [
+    "agent",
+    "skill-core",
+    "tools",
+    "runtime"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/qingduo/skill-core",
+  "bugs": {
+    "url": "https://github.com/qingduo/skill-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingduo/skill-core.git"
+  },
+  "type": "module",
+  "private": true,
+  "sideEffects": false,
+  "packageManager": "pnpm@10.23.0",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check:forbidden-imports": "node ./scripts/check-forbidden-imports.mjs",
+    "pack:dry-run": "mkdir -p .artifacts && pnpm pack --pack-destination .artifacts",
+    "release:check": "pnpm verify && pnpm pack:dry-run",
+    "test": "vitest run --config vitest.config.ts",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "pnpm build && pnpm typecheck && pnpm check:forbidden-imports && pnpm test && pnpm test:e2e"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}
