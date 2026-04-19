@@ -45,4 +45,22 @@ git commit -m "Initial standalone skill-core import"
 
 - Local standalone repository initialized
 - Initial commit created on `main`
-- Remote GitHub repository `qingduo/skill-core` has not been created yet
+- Remote GitHub repository `qingduo/skill-core` was created with an initial `README.md` commit
+
+## Remote Inspection and Push Commands
+
+```sh
+git ls-remote git@github.com:qingduo/skill-core.git HEAD
+git fetch origin main
+git log --oneline --decorate --max-count=5 origin/main
+git ls-tree --name-only -r origin/main
+git remote add origin git@github.com:qingduo/skill-core.git
+git push --force-with-lease -u origin main
+```
+
+## Push Outcome
+
+- Remote repository was reachable over SSH
+- Remote `main` initially contained only `README.md`
+- Final push strategy: overwrite remote `main` with the local standalone repository
+- Force push completed successfully
