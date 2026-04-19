@@ -64,3 +64,20 @@ git push --force-with-lease -u origin main
 - Remote `main` initially contained only `README.md`
 - Final push strategy: overwrite remote `main` with the local standalone repository
 - Force push completed successfully
+
+## CI Follow-Up Commands
+
+```sh
+corepack pnpm install --lockfile-only
+corepack pnpm install
+pnpm release:check
+```
+
+## CI Follow-Up Outcome
+
+- Root cause found from GitHub Actions: standalone repository was missing
+  `pnpm-lock.yaml`, so dependency installation failed before the workflow could
+  run the package checks.
+- Generated `pnpm-lock.yaml` in `/tmp/skill-core-repo`.
+- Reinstalled dependencies in the standalone repository copy.
+- `pnpm release:check` passed locally after the lockfile was added.
