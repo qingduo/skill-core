@@ -7,9 +7,9 @@ repository from the current monorepo package contents.
 
 - repository name: `skill-core`
 - license: `MIT`
-- keep `"private": true` in `package.json`
 - do not preserve git history
-- prepare for npm publish, but do not enable publish yet
+- publish package as `@qingduo/skill-core`
+- keep repository public and package publishable
 
 ## Source Directory
 
@@ -52,8 +52,6 @@ cd /tmp/skill-core-repo
 gh repo create <github-owner>/skill-core --private --source=. --remote=origin --push
 ```
 
-If the repository should be public instead, replace `--private` with `--public`.
-
 ## First Push Without Git History
 
 Because the migration should not preserve history, use the copied directory as a
@@ -75,11 +73,11 @@ After the repository is created:
 2. Run the standalone CI workflow from the new repository.
 3. Verify `README.md`, `RELEASE.md`, and `validate-log.md` links in the new
    repository layout.
-4. Decide when to drop `"private": true` for npm publish.
+4. Verify the package name remains `@qingduo/skill-core` before publishing.
 
 ## npm Publish Preparation
 
-The package is already prepared for eventual publish with:
+The package is already prepared for publish with:
 
 - `publishConfig.access = "public"`
 - release gate: `pnpm release:check`
@@ -87,10 +85,9 @@ The package is already prepared for eventual publish with:
 
 Before a real publish:
 
-1. remove `"private": true`
-2. update version if needed
-3. rerun `pnpm release:check`
-4. publish from the standalone repository root:
+1. update version if needed
+2. rerun `pnpm release:check`
+3. publish from the standalone repository root:
 
 ```sh
 npm publish --access public

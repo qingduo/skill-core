@@ -81,3 +81,19 @@ pnpm release:check
 - Generated `pnpm-lock.yaml` in `/tmp/skill-core-repo`.
 - Reinstalled dependencies in the standalone repository copy.
 - `pnpm release:check` passed locally after the lockfile was added.
+
+## Scope Rename Commands
+
+```sh
+corepack pnpm install --ignore-scripts
+pnpm release:check
+```
+
+## Scope Rename Outcome
+
+- Renamed the publish target from `@openclaw/skill-core` to
+  `@qingduo/skill-core`.
+- Removed `private: true` so the standalone repository is publishable to npm.
+- Updated README, release notes, bootstrap notes, and validation log to the new
+  package scope.
+- Verified the standalone repository still passes `pnpm release:check`.

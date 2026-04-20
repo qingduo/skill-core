@@ -1,6 +1,6 @@
-# @openclaw/skill-core
+# @qingduo/skill-core
 
-`@openclaw/skill-core` is the extracted minimal agent runtime for script-oriented
+`@qingduo/skill-core` is the extracted minimal agent runtime for script-oriented
 skills.
 
 ## Scope
@@ -23,7 +23,7 @@ This package does not own:
 ## Public Surface
 
 The package exports its public API from `dist/index.js` and `dist/index.d.ts`.
-Main-repo consumers should import `@openclaw/skill-core` and should not import
+Consumers should import `@qingduo/skill-core` and should not import
 package source files directly.
 
 ## Versioning Boundary
@@ -35,8 +35,9 @@ The intended compatibility boundary is:
 - semver-minor: backward-compatible API additions and new optional behaviors
 - semver-patch: fixes, internal refactors, and test-only changes
 
-The package remains `private` while the monorepo integration and release process
-are being finalized.
+This package is intended for direct npm publication under the `@qingduo` scope.
+The current `0.x` line allows controlled breaking changes, including the scope
+rename from `@openclaw/skill-core` to `@qingduo/skill-core`.
 
 ## Verification
 
@@ -60,8 +61,8 @@ pnpm release:check
 
 mkdir -p /tmp/skill-core-external-consumer
 cd /tmp/skill-core-external-consumer
-corepack pnpm add /path/to/openclaw-skill-core-0.1.0.tgz
-node --input-type=module -e "import { createStandaloneSkillCoreRuntime } from '@openclaw/skill-core'; console.log(typeof createStandaloneSkillCoreRuntime)"
+corepack pnpm add /path/to/qingduo-skill-core-0.1.0.tgz
+node --input-type=module -e "import { createStandaloneSkillCoreRuntime } from '@qingduo/skill-core'; console.log(typeof createStandaloneSkillCoreRuntime)"
 ```
 
 For the full host-free validation sequence, see [validate-log.md](./validate-log.md).

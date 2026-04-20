@@ -1,7 +1,7 @@
 # Step 28 Validation Log
 
 This document records the detailed execution log for the approved external-consumer
-validation run of `@openclaw/skill-core`.
+validation run of `@qingduo/skill-core`.
 
 ## Scope
 
@@ -17,7 +17,7 @@ validation run of `@openclaw/skill-core`.
 - Repository root: `/Users/kingdom10/openclaw-main`
 - Package under test: `/Users/kingdom10/openclaw-main/packages/skill-core`
 - External consumer: `/tmp/skill-core-external-consumer`
-- Tarball used: `/Users/kingdom10/openclaw-main/packages/skill-core/.artifacts/openclaw-skill-core-0.1.0.tgz`
+- Tarball used: `/Users/kingdom10/openclaw-main/packages/skill-core/.artifacts/qingduo-skill-core-0.1.0.tgz`
 
 ## Execution Log
 
@@ -41,7 +41,7 @@ Result:
   - `test:e2e`
   - `pack:dry-run`
 - Refreshed tarball:
-  - `packages/skill-core/.artifacts/openclaw-skill-core-0.1.0.tgz`
+  - `packages/skill-core/.artifacts/qingduo-skill-core-0.1.0.tgz`
 
 ### 2. Prepare external consumer directory
 
@@ -68,15 +68,15 @@ Command:
 
 ```sh
 cd /tmp/skill-core-external-consumer
-corepack pnpm add /Users/kingdom10/openclaw-main/packages/skill-core/.artifacts/openclaw-skill-core-0.1.0.tgz
+corepack pnpm add /Users/kingdom10/openclaw-main/packages/skill-core/.artifacts/qingduo-skill-core-0.1.0.tgz
 ```
 
 Result:
 
 - Passed
 - Installed dependency:
-  - `@openclaw/skill-core@0.1.0`
-- Confirmed `node_modules/@openclaw/skill-core` exists
+  - `@qingduo/skill-core@0.1.0`
+- Confirmed `node_modules/@qingduo/skill-core` exists
 
 ### 4. First external verification attempt
 
@@ -183,7 +183,7 @@ Verification points confirmed by the script:
 The final `node verify.mjs` run reported:
 
 ```text
-- install: resolved @openclaw/skill-core to .../node_modules/@openclaw/skill-core/dist/index.js
+- install: resolved @qingduo/skill-core to .../node_modules/@qingduo/skill-core/dist/index.js
 - exports: main entry resolves to dist/index.js
 - public api: expected runtime and command exports are available
 - metadata: package.json and README align with package surface
@@ -205,6 +205,6 @@ The final `node verify.mjs` run reported:
 
 ## Conclusion
 
-The packaged tarball for `@openclaw/skill-core` is externally consumable in a
+The packaged tarball for `@qingduo/skill-core` is externally consumable in a
 fresh minimal consumer directory and supports the approved host-free validation
 surface.

@@ -1,13 +1,14 @@
 # Release Boundary
 
-This document records the current release boundary for `@openclaw/skill-core`.
+This document records the current release boundary for `@qingduo/skill-core`.
 
 ## Current State
 
 - The package builds and verifies independently as a standalone repository.
-- The package is still marked `private`, so release readiness does not yet imply
-  public publishability.
-- Consumers should import `@openclaw/skill-core` from built package artifacts.
+- The package is publish-ready for the `@qingduo` npm scope.
+- Consumers should import `@qingduo/skill-core` from built package artifacts.
+- The current `0.x` line explicitly allows the breaking rename from
+  `@openclaw/skill-core` to `@qingduo/skill-core`.
 
 ## Release Gate
 
@@ -41,9 +42,9 @@ The release boundary does not promise stability for:
 - test-only helpers
 - temporary monorepo compatibility shells outside `packages/skill-core`
 
-## Publish Readiness Gap
+## Publish Readiness Gate
 
-Before dropping `private: true`, confirm:
+Before a real npm publish, confirm:
 
 1. the package can be consumed from a fresh clone without source-path aliases
 2. CI runs `pnpm release:check`

@@ -1,5 +1,5 @@
 {
-  "name": "@openclaw/skill-core",
+  "name": "@qingduo/skill-core",
   "version": "0.1.0",
   "description": "Decoupled skill-core runtime contracts and minimal tool orchestration",
   "keywords": [
@@ -18,7 +18,6 @@
     "url": "git+https://github.com/qingduo/skill-core.git"
   },
   "type": "module",
-  "private": true,
   "sideEffects": false,
   "packageManager": "pnpm@10.23.0",
   "files": [
